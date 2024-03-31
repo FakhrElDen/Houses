@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transaction</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+          <tr>
+            <td>{{row["name"]}}</td>
+            <td>{{row["shares"]}}</td>
+            <td>{{row["price"]}}</td>
+            <td>{{row["transaction"]}}</td>
+          </tr>
+         {% end for %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

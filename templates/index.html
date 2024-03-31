@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+          <tr>
+            <td>{{row["items"]}}</td>
+            <td>{{row["shares"]}}</td>
+            <td>{{row["price"]}}</td>
+            <td>{{row["value"]}}</td>
+          </tr>
+         {% end for %}
+         <tr>
+            <td>Cash</td>
+            <td></td>
+            <td></td>
+            <td>{{cashs}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+{% endblock %}
